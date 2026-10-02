@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Middleman Tracking System</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">M</div><div><b>Middleman</b><span>Tracking System</span></div></div>
+    <nav>
+      <button data-view="dashboard" class="nav active">▦ <span>Dashboard</span></button>
+      <button data-view="search" class="nav">⌕ <span>Search Console</span></button>
+      <button data-view="passengers" class="nav">♙ <span>Passengers</span></button>
+      <button data-view="agent" class="nav">A <span>Testing Ag</span></button>
+      <button data-view="contractor" class="nav">C <span>Testing Tc</span></button>
+      <button data-view="isra" class="nav">I <span>Isra</span></button>
+      <button data-view="invoice" class="nav">▤ <span>Invoices</span></button>
+      <button data-view="settings" class="nav">⚙ <span>Settings</span></button>
+    </nav>
+    <div class="side-bottom">
+      <button id="importBtn" class="side-action">↥ Import Excel</button>
+      <button id="exportBtn" class="side-action">↧ Export Excel</button>
+      <input id="fileInput" type="file" accept=".xlsx,.xls" hidden>
+      <small>Data is stored in this browser. Export regularly for backup.</small>
+    </div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <div><div class="eyebrow">Operations</div><h1 id="pageTitle">Dashboard</h1></div>
+      <div class="top-actions">
+        <button class="btn secondary" id="globalSearchBtn">⌕ Search</button>
+        <button class="btn primary" id="addBtn">＋ Add Passenger</button>
+      </div>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+<div id="modal" class="modal hidden"></div>
+<div id="toast"></div>
+<script src="initial-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
